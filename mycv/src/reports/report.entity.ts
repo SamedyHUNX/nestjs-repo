@@ -4,13 +4,16 @@ import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 @Entity()
 export class Report {
   @PrimaryGeneratedColumn()
-  id: number;
+  id: string;
 
   @Column()
   price: number;
 
   @Column()
   model: string;
+
+  @Column({ default: false })
+  approved: boolean;
 
   @Column()
   year: number;
